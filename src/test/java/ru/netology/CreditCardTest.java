@@ -34,7 +34,7 @@ public class CreditCardTest {
     @Test
     void SendForm() {
         driver.get("http://localhost:9999");
-        driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Семин Денис");
+        driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Semin Denis");
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79109009593");
         driver.findElement(By.cssSelector("label[data-test-id='agreement']")).click();
         driver.findElement(By.className("button_view_extra")).click();
