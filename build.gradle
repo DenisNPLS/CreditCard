@@ -6,14 +6,13 @@ group 'ru.netology'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 11
-
-// кодировка файлов (если используете русский язык в файлах)
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
 repositories {
     mavenCentral()
 }
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
@@ -21,7 +20,7 @@ tasks.withType(JavaCompile) {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     implementation 'org.seleniumhq.selenium:selenium-java:4.2.1'
-
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.2.3")
 }
 
 test {
