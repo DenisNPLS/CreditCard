@@ -48,7 +48,7 @@ public class CreditCardTest {
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79109009593");
         driver.findElement(By.cssSelector("label[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector(".button_view_extra")).click();
-        String text = driver.findElement(By.className("[data-test-id='name'].input_invalid .input__sub")).getText().trim();
+        String text = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub")).getText().trim();
         assertEquals("Поле обязательно для заполнения", text);
     }
 
@@ -67,7 +67,7 @@ public class CreditCardTest {
         driver.findElement(By.cssSelector("span[data-test-id='name'] input")).sendKeys("Семин Денис");
         driver.findElement(By.cssSelector("span[data-test-id='phone'] input")).sendKeys("+79109009593");
         driver.findElement(By.cssSelector(".button_view_extra")).click();
-        String text = driver.findElement(By.cssSelector("label[data-test-id='agreement']")).getText().trim();
+        String text = driver.findElement(By.cssSelector("[data-test-id='agreement'].input_invalid")).getText().trim();
         assertEquals("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй", text);
     }
 
@@ -132,7 +132,7 @@ public class CreditCardTest {
     }
 
     @Test
-    void SendAnEmptyForm() {
+    void sendAnEmptyForm() {
         driver.findElement(By.cssSelector(".button_view_extra")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub")).getText().trim();
         assertEquals("Поле обязательно для заполнения", text);
